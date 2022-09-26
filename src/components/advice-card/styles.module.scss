@@ -38,7 +38,8 @@
 
 .divider {
   background-image: url('@assets/images/pattern-divider-desktop.svg');
-  width: 27.8em;
+  background-position: center;
+  width: 80%;
   height: 16px;
 }
 
@@ -67,7 +68,5 @@
   }
   .divider {
     background-image: url('@assets/images/pattern-divider-mobile.svg');
-    width: 18.5em;
-    height: 16px;
   }
 }
