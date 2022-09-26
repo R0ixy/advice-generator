@@ -1,0 +1,73 @@
+@import '@assets/css/variables';
+
+.pageWrapper{
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cardWrapper {
+  background-color: var(--dark-grayish-blue);
+  max-width: 100%;
+  width: 30em;
+  height: 25em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.adviceNumber {
+  color: var(--neon-green);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.adviceText {
+  width: 90%;
+  font-weight: 800;
+  text-align: center;
+  color: var(--light-cyan);
+  font-size: var(--quote-size);
+}
+
+.divider {
+  background-image: url('@assets/images/pattern-divider-desktop.svg');
+  width: 27.8em;
+  height: 16px;
+}
+
+.button {
+  background-image: url('@assets/images/icon-dice.svg');
+  background-size: 1.7em;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -2em auto;
+  background-color: var(--neon-green);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 4em;
+  height: 4em;
+
+    &:hover {
+      box-shadow: 0 0 15px 4px var(--neon-green);
+    }
+}
+
+@media (max-width: $mobile) {
+  .cardWrapper {
+    width: 90%;
+    gap: 0;
+  }
+  .divider {
+    background-image: url('@assets/images/pattern-divider-mobile.svg');
+    width: 18.5em;
+    height: 16px;
+  }
+}
