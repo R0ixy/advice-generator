@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/advice-generator',
+  base: '/advice-generator/',
   server: {
     host: true,
     port: 3000,
