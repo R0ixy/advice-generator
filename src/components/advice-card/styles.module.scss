@@ -1,6 +1,6 @@
 @import '@assets/css/variables';
 
-.pageWrapper{
+.pageWrapper {
   background-color: var(--dark-blue);
   display: flex;
   flex-direction: column;
@@ -24,8 +24,9 @@
 
 .adviceNumber {
   color: var(--neon-green);
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.25rem;
 }
 
 .adviceText {
@@ -56,9 +57,22 @@
   width: 4em;
   height: 4em;
 
-    &:hover {
-      box-shadow: 0 0 15px 4px var(--neon-green);
-    }
+  &:hover {
+    box-shadow: 0 0 15px 4px var(--neon-green);
+  }
+}
+
+.loading {
+  animation: spin 1s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: $mobile) {

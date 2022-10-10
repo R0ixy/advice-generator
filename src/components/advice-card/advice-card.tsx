@@ -9,12 +9,14 @@ interface iAdvice {
 
 const AdviceCard: FC = () => {
   const [advice, setAdvice] = useState<iAdvice>({ id: 0, text: '' });
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetchAdvice();
   }, []);
 
   const fetchAdvice = () => {
+    setIsLoading(true);
     fetch('https://api.adviceslip.com/advice')
       .then((response) => {
         response.json()
@@ -24,7 +26,8 @@ const AdviceCard: FC = () => {
               text: res.slip.advice
             })
           );
-      });
+      })
+      .then(() => setIsLoading(false));
   }
 
   return (
@@ -36,7 +39,7 @@ const AdviceCard: FC = () => {
         </p>
         <div className={styles.divider}/>
       </div>
-      <div className={styles.button} onClick={fetchAdvice}/>
+      <div className={`${styles.button} ${isLoading || styles.loading}`} onClick={fetchAdvice}/>
     </div>
   );
 };
